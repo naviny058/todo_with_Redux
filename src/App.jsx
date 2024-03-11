@@ -26,11 +26,11 @@ const App = () => {
   //   setTodo(e.target.value)
   //   console.log(e.target);
   // }
-  // function handleEnter(e) {
-  //   if (e.key === 'Enter') {
-  //     handleTodo()
-  //   }
-  // }
+  function handleEnter(e) {
+    if (e.key === 'Enter') {
+      handleTodo()
+    }
+  }
   // function handleDeleteTodo(id) {
   //   const removeTodo = todos.filter((todoItem, i) => todoItem.id !== id)
   //   setTodos(removeTodo)
@@ -47,7 +47,9 @@ const App = () => {
         <div>
           <div className='user-insert-todo-area text-2xl my-8'>
             <input type="text" placeholder='Enter your toods...' className='max-w-4xl w-96 mx-4 bg-black px-4 py-2 rounded-lg'
-              value={todo} onChange={(e) => setTodo(e.target.value)} />
+              value={todo}
+              onKeyDown={handleEnter}
+              onChange={(e) => setTodo(e.target.value)} />
             <button className='bg-black px-4 py-2 rounded-lg hover:bg-gray-900' onClick={handleTodo}>Add Todo</button>
           </div>
           {/* user's todo's display  */}
