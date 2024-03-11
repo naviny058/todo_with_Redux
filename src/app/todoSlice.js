@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 
 const initialState = [{
     id: nanoid(),
-    userTodo: 'Start Making Real Life Project',
+    userTodo: 'Start making your Todo',
     isComplete: false
 }]
 export const todoSlice = createSlice({
